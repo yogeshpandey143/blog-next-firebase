@@ -1,7 +1,7 @@
 "use client";
 
 import { useAuth } from "@/lib/context/AuthContext";
-
+import Link from "next/link";
 export default function LoginButton() {
   const { user, isLoading, error, handleSignInWithGoogle, handleLogout } =
     useAuth();
@@ -16,10 +16,7 @@ export default function LoginButton() {
 
   if (user) {
     return (
-      <div
-        className="bg-blue-100
-       rounded-md text-white items-center px-2 py-1 gap-3 flex"
-      >
+      <div className=" gap-3 flex items-center">
         <button
           onClick={() => {
             handleLogout();
@@ -29,18 +26,22 @@ export default function LoginButton() {
         >
           Logout
         </button>
-
-        <div className="flex gap-2">
-          <img
-            className="object-cover h-10 w-10 rounded-full"
-            src={user?.photoURL}
-            alt=""
-          />
-          <div>
-            <h2 className="font-bold text-black">{user?.displayName}</h2>
-            <p className="text-sm text-gray-400">{user?.email}</p>
+        <Link href={"/admin"}>
+          <div
+            className="bg-blue-100
+       rounded-md text-white items-center px-2 py-1 gap-3 flex"
+          >
+            <img
+              className="object-cover h-10 w-10 rounded-full"
+              src={user?.photoURL}
+              alt=""
+            />
+            <div>
+              <h2 className="font-bold text-black">{user?.displayName}</h2>
+              <p className="text-sm text-gray-400">{user?.email}</p>
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
     );
   }
