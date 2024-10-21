@@ -20,12 +20,12 @@ export default function Sidebar() {
     },
     {
       name: "Categories",
-      link: "/admin/category",
+      link: "/admin/categories",
       icon: <ChartBarStacked />,
     },
     {
       name: "Authors",
-      link: "/admin/author",
+      link: "/admin/authors",
       icon: <UserRound />,
     },
   ];
