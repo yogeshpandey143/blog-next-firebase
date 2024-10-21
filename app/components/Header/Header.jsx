@@ -12,14 +12,18 @@ export default function Header() {
       </Link>
 
       <ul className="flex gap-6 items-center">
-        <li className="flex gap-2 items-center">
-          <Home />
-          Home
-        </li>
-        <li className="flex gap-2 items-center">
-          <List />
-          Category
-        </li>
+        <Link href={"/"}>
+          <li className="flex gap-2 items-center">
+            <Home />
+            Home
+          </li>
+        </Link>
+        <Link href={"/admin/categories"}>
+          <li className="flex gap-2 items-center">
+            <List />
+            Category
+          </li>
+        </Link>
         <li className="flex gap-2 items-center">
           <Contact />
           Contact Us
